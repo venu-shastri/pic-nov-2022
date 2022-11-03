@@ -1,0 +1,62 @@
+<!-- Content -->
+<fieldset>
+    <legend>MELD Calculator</legend>
+    <table>
+        <tr>
+            <td>Dialysis at least twice in the past week
+                Or CVVHD for ≥24 hours in the past week</td>
+                <td>
+                    <input type="radio" id="r1" name="dialysis_option" value="Yes">
+                    <label for="r1">Yes</label><br>
+                    <input type="radio" id="r2" name="dialysis_option" value="No">
+                     <label for="r2">No</label><br>
+                </td>
+        </tr>
+        <tr>
+            <td>Creatinine
+                Cr &gt;4.0 mg/dL is automatically assigned a value of 4.0
+            <td>
+                <input 
+                #creatinine_editBox type="text" 
+                id="creatinine" 
+                (input)="setCreatinine(creatinine_editBox.value)"
+                [value]="creatinine" />
+            </td>
+        </tr>
+        <tr>
+            <td>Bilirubin
+            <td>
+                <input #bilrubin_editBox type="text"
+                 (input)="setBilirubin(bilrubin_editBox.value)"
+                 [value]="total_bilirubin" />
+            </td>
+        </tr>
+        <tr>
+            <td>INR
+            <td>
+                <input #inr_editBox type="text" 
+                (input)="setINR(inr_editBox.value)"
+                [value]="INR"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Sodium
+            <td>
+                <input #sodium_editBox type="text" 
+                (input)="setSodium(sodium_editBox.value)"
+                />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="calculateMeldScore()">Calculate</button>
+            <td>
+                <button (click)="reset()">Clear</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Points:</td>
+            <td>Meld Score is :{{meldScore | percent }} </td>
+        </tr>
+    </table>
+</fieldset>
