@@ -6,5 +6,5 @@ import { Component, ViewChild } from "@angular/core"
 })
 export class AppComponent{
 
-   
+   colorProperty:string="blue";
 }
