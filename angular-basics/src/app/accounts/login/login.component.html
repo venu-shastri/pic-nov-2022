@@ -1,0 +1,31 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" novalidate >
+<fieldset>
+    <legend>Model Driven Form</legend>
+   
+    <table>
+        <tr>
+            <td>UserName:</td>
+            <td>
+                <input type="text" formControlName="userName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>
+                <input type="password" formControlName="password"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" nofor/>
+            </td>
+            <td>
+                <input type="button" value="Reset" (click)="clear()"/>
+            </td>
+        </tr>
+    </table>
+    
+</fieldset>
+<p *ngIf="loginForm.controls['userName'].errors?.['required']">
+    Error in Control
+</p>

@@ -1,0 +1,35 @@
+<form  (ngSubmit)="signup()">
+    <fieldset>
+        <legend>Model Driven Form</legend>
+       
+        <table>
+            <tr>
+                <td>UserName:</td>
+                <td>
+                    <input type="text" name="userNameTextBox" [(ngModel)]="userName" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" name="passwordTextBox"  [(ngModel)]="password" required minlength="8"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" name="emailTextBox"  [(ngModel)]="email" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login"/>
+                </td>
+                <td>
+                    <input type="button" value="Reset" (click)="clear()"/>
+                </td>
+            </tr>
+        </table>
+        
+    </fieldset>
+    </form>
