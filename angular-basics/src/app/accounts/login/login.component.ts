@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { ConsoleLoggerService } from 'src/app/services/consoleLogger.service';
+import { ILogger } from 'src/app/services/logger.contract';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { ConsoleLoggerService } from 'src/app/services/consoleLogger.service';
 export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
-  constructor(private logger:ConsoleLoggerService) {
+  constructor(@Inject("logger")  private logger:ILogger) {
     this.loginForm=new  FormGroup({
       userName:new FormControl('',Validators.required),
       password:new FormControl('',Validators.required)
