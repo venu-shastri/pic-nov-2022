@@ -13,24 +13,20 @@ import { BmiCalculatorService } from '../services/bmiCalucator.service';
 export class BmiCalculatorComponent implements OnInit { // BmiCalculator is a God Class/object
 
   bmiScore:number=0;
-  height:number=0;
-  weight:number=0;
-
   constructor(private calcRef:BmiCalculatorService,
     @Inject("logger")private logger:ILogger) { }
 
   ngOnInit(): void {
   }
-  calculateBMI(){
+  calculateBmiScore(height:any,weight:any){
     this.logger.write("BmiCalculatorComponent.calculateBMI Called");
-this.bmiScore=this.calcRef.calculateBMI(this.height,this.weight);
+    this.bmiScore=this.calcRef.calculateBMI(height,weight);
+  }
+  setCalculatorInput(data:any){
+    this.calculateBmiScore(data.heightInput,data.weightInput);
   }
 
 
-  reset(){
- this.bmiScore=0;
- this.height=0;
- this.weight=0;
-  }
+  
 
 }

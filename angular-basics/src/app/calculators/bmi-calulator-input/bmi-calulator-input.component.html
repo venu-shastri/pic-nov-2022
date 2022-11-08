@@ -1,0 +1,41 @@
+<p>bmi-calulator-input works!</p>
+<table>
+    <tr>
+        <td>Height</td>
+            <td>
+                <input type="text" name="heightTextBox" 
+                [(ngModel)]="height" 
+                #heightFormControlRef="ngModel" 
+                required
+                 pattern="\d{2}" />
+            </td>
+            <td>
+                <p>Is TextBox Touched {{heightFormControlRef.touched}}</p>
+                <p>Is TextBox Dirty {{heightFormControlRef.dirty}}</p>
+                <p>Is TextBox Valid {{heightFormControlRef.valid}}</p>
+                <p>TextBox Vlaue {{heightFormControlRef.value}}</p>
+                <div *ngIf="heightFormControlRef.errors && (heightFormControlRef.dirty || heightFormControlRef.touched)">
+
+               
+                <p *ngIf="heightFormControlRef.errors['required']">TextBox Requires Value</p>
+                <p *ngIf="heightFormControlRef.errors['pattern']"> TextBox value must be Number and range is 00-99</p>
+            </div>
+            </td>
+    </tr>
+    <tr>
+        <td>Weight
+            <td>
+                <!-- [(ngModel)]="weight"-->
+                <input type="text" [(ngModel)]="weight"/> <!-- new FormControl()-->
+            </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button (click)="calculateBMI()">Calculate</button>
+        <td>
+            <button (click)="reset()">Clear</button>
+        </td>
+    </tr>
+    
+</table>
