@@ -9,18 +9,25 @@ import { BmiDataReposioryService } from 'src/app/services/bmi-data-reposiory.ser
 export class GridComponent implements OnInit {
 
   lineItems:any=[];
+  
   constructor(private repoService:BmiDataReposioryService) {
-    this.onNewHistoryEntryMade=this.onNewHistoryEntryMade.bind(this);
+   // this.onNewHistoryEntryMade=this.onNewHistoryEntryMade.bind(this);
    }
 
   ngOnInit(): void {
-    this.repoService.bmiHistoryObservableStream.subscribe(this.onNewHistoryEntryMade)
+    
+  //  let _this=this;//closure
+  //   function onNewHistoryEntryMade(data:any){
+  //     console.log("onNewHistoryEntryMade invoked",data)
+  //     _this.lineItems.push(data);
+  
+  //   }
+    this.repoService.bmiHistoryObservableStream.subscribe(
+      (data:any)=>{
+      this.lineItems.push(data);
+    })
   }
 
-  onNewHistoryEntryMade(data:any){
-    console.log("onNewHistoryEntryMade invoked",data)
-    this.lineItems.push(data);
-
-  }
+  
 
 }

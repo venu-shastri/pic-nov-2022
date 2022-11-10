@@ -9,13 +9,23 @@ import { UtilityModule } from './utility/utility.module'
 import { ApiLoggerService } from './services/apiLogger.service'
 import { ConsoleLoggerService } from './services/consoleLogger.service'
 import { ReportsModule } from './reports/reports.module'
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component'
+import { AppRoutingModule } from './appRouting.module'
+
+
+
+//Route Congiguartion
 
 
 @NgModule({
-    declarations:[AppComponent,HoverDirective],
+    declarations:[AppComponent,HoverDirective, HomeComponent],
     bootstrap:[AppComponent],
-    imports:[BrowserModule,CalculatorsModule,AccountsModule, BrowserAnimationsModule,UtilityModule,ReportsModule,CommonModule],
+    imports:[BrowserModule,
+        CalculatorsModule,
+        AccountsModule, BrowserAnimationsModule,
+        UtilityModule,ReportsModule,CommonModule,AppRoutingModule
+    ],
     providers:[
         {provide:"logger",useClass:ConsoleLoggerService},
         
