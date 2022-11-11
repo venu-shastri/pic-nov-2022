@@ -5,10 +5,13 @@ import { BmiCalculatorComponent } from './bmi-calculator/bmi-calculator.componen
 import { FormsModule } from '@angular/forms';
 import { BmiCalulatorInputComponent } from './bmi-calulator-input/bmi-calulator-input.component';
 import { BmiCalulatorResultComponent } from './bmi-calulator-result/bmi-calulator-result.component';
+import { CalculatorcardsComponent } from './calculatorcards/calculatorcards.component';
+
+import { CalculatorsRoutingModule } from './calculators-routing.module';
 @NgModule({
-    declarations:[MeldCalculatorComponent, BmiCalculatorComponent, BmiCalulatorInputComponent, BmiCalulatorResultComponent],
+    declarations:[MeldCalculatorComponent, BmiCalculatorComponent, BmiCalulatorInputComponent, BmiCalulatorResultComponent, CalculatorcardsComponent],
     exports:[MeldCalculatorComponent,BmiCalculatorComponent],
-    imports:[CommonModule,FormsModule]
+    imports:[CommonModule,FormsModule,CalculatorsRoutingModule]
 })
 export class CalculatorsModule{
 

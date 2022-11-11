@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,9 +15,9 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule
+    CommonModule,FormsModule,ReactiveFormsModule,RouterModule
   ],
-  exports:[LoginComponent]
+  exports:[LoginComponent,SignupComponent,ProfileComponent]
 
 })
 export class AccountsModule { }

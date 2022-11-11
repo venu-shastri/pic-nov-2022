@@ -11,7 +11,8 @@ import { ConsoleLoggerService } from './services/consoleLogger.service'
 import { ReportsModule } from './reports/reports.module'
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component'
-import { AppRoutingModule } from './appRouting.module'
+import { AppRoutingModule } from './appRouting.module';
+import { PanelComponent } from './panel/panel.component'
 
 
 
@@ -19,10 +20,10 @@ import { AppRoutingModule } from './appRouting.module'
 
 
 @NgModule({
-    declarations:[AppComponent,HoverDirective, HomeComponent],
+    declarations:[AppComponent,HoverDirective, HomeComponent, PanelComponent],
     bootstrap:[AppComponent],
     imports:[BrowserModule,
-        CalculatorsModule,
+        
         AccountsModule, BrowserAnimationsModule,
         UtilityModule,ReportsModule,CommonModule,AppRoutingModule
     ],
